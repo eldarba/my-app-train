@@ -1,0 +1,29 @@
+<!-- data binding - communication -->
+<!-- 1. string interpolation (from ts to template) -->
+<!-- 2. property binding (from ts to template) -->
+<!-- 3. event binding (from template to ts) -->
+<!-- 4. two way binding (from ts to template and from template to ts) -->
+
+
+<label for="serverName">server name </label><br>
+
+<!-- event binding -->
+<!-- <input type="text" id="serverName" (input)="onUpdateServerName($event)"> -->
+
+<!-- two way binding -->
+<input type="text" id="serverName" [(ngModel)]="serverName">
+
+<!-- string interpolation -->
+<!-- <div>{{serverName}}</div> -->
+
+<!-- event binding -->
+<button [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
+<!-- <div>allow new server: {{allowNewServer}}</div>
+
+<div>allow new server: <span [innerText]="allowNewServer"></span> </div> -->
+<!-- {{serverCreationStatus}} -->
+
+<p *ngIf="serverCreated">server created! server name is: {{serverName}}</p>
+
+<app-server></app-server>
+<app-server></app-server>

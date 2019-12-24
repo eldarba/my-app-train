@@ -1,0 +1,46 @@
+<h1>Numbers</h1>
+<div>
+    <button (click)="generate()">Genertare Number</button>
+</div>
+<div>
+    number is: {{num}}
+</div>
+
+<hr> 1. IF
+<!-- If expanded syntax -->
+<ng-template [ngIf]="num % 2 == 0">
+    <div>Even 1</div>
+</ng-template>
+
+<hr> 2. IF
+<!-- THIS IS HOW WE DO IF -->
+<!-- If shorthand syntax -->
+<div *ngIf="num % 2 == 0">Even 2</div>
+
+<hr> 3. IF-ELSE
+<!-- If-Else expanded syntax-->
+<ng-template [ngIf]="num % 2 == 0" [ngIfElse]="lbl">
+    <div>Even 3</div>
+</ng-template>
+<ng-template #lbl>
+    <div>No Even 3</div>
+</ng-template>
+
+<hr> IF-ELSE 4
+<!-- If-Else expanded syntax -->
+<div *ngIf="num % 2 == 0; then x else y"></div>
+<ng-template #x>
+    <div>Even 4</div>
+</ng-template>
+<ng-template #y>
+    <div>No Even 4</div>
+</ng-template>
+
+
+<hr> IF-ELSE 5
+<!-- THIS IS HOW WE DO IF-ELSE -->
+<!-- If-Else shorthand syntax -->
+<div *ngIf="num % 2 == 0; else z">Even 5</div>
+<ng-template #z>
+    <div>No Even 5</div>
+</ng-template>
